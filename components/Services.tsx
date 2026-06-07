@@ -7,37 +7,37 @@ import Link from 'next/link';
 const services = [
   {
     title: 'Website Development',
-    slug: '/website-development',
+    slug: '#contact',
     icon: <Monitor className="w-8 h-8" />,
     features: ['Business Websites', 'Portfolio Websites', 'Landing Pages', 'Startup Websites', 'E-commerce Websites']
   },
   {
     title: 'Graphic Design',
-    slug: '/graphic-design',
+    slug: '#contact',
     icon: <Paintbrush className="w-8 h-8" />,
     features: ['Social Media Posts', 'Thumbnail Design Services', 'Brand Assets', 'Marketing Creatives']
   },
   {
     title: 'Photo Editing',
-    slug: '/graphic-design',
+    slug: '#contact',
     icon: <Camera className="w-8 h-8" />,
     features: ['Professional Retouching', 'Product Editing', 'Branding Images']
   },
   {
     title: 'Video Editing',
-    slug: '/video-editing',
+    slug: '#contact',
     icon: <Film className="w-8 h-8" />,
     features: ['Reels', 'YouTube Videos', 'Promotional Videos', 'Short Form Content']
   },
   {
     title: 'UI/UX Design',
-    slug: '/graphic-design',
+    slug: '#contact',
     icon: <LayoutTemplate className="w-8 h-8" />,
     features: ['Wireframes', 'Prototypes', 'User Experience Design']
   },
   {
     title: 'AI-Powered Solutions',
-    slug: '/website-development',
+    slug: '#contact',
     icon: <Cpu className="w-8 h-8" />,
     features: ['AI Integrations', 'Automation Workflows', 'AI-Assisted Development']
   }

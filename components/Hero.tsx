@@ -75,14 +75,14 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
             <Link
-              href="/contact"
+              href="#contact"
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-all flex items-center justify-center gap-2 group"
             >
               Book Free Consultation
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/portfolio"
+              href="#work"
               className="w-full sm:w-auto px-8 py-4 rounded-full glass glass-hover text-white font-medium transition-all flex items-center justify-center gap-2 group"
             >
               <Play size={18} className="fill-white/20 group-hover:fill-white/50 transition-colors" />

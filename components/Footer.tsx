@@ -6,12 +6,11 @@ import { Linkedin, Github, Instagram, Mail } from 'lucide-react';
 
 export default function Footer() {
   const links = [
-    { name: 'Web Dev', href: '/website-development' },
-    { name: 'Design', href: '/graphic-design' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Web Dev', href: '#services' },
+    { name: 'Design', href: '#services' },
+    { name: 'Portfolio', href: '#work' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
