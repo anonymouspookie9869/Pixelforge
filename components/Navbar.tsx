@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link href="/" className="flex flex-col items-start z-50 group">
           <div className="flex items-center gap-3">
             <div className="relative w-8 h-8 rounded shrink-0 overflow-hidden">
-              <Image src="/logo.png" alt="PixelForge Studio Logo" fill className="object-cover" />
+              <Image src="/logo.png" alt="PixelForge Studio Logo" fill className="object-cover" referrerPolicy="no-referrer" />
             </div>
             <div className="text-2xl font-heading font-black tracking-widest uppercase flex items-center">
               <span className="text-white">PIXEL</span>
