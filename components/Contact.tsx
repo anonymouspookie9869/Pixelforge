@@ -4,6 +4,37 @@ import { motion } from 'motion/react';
 import { Send, MessageCircle, Calendar } from 'lucide-react';
 import { useState } from 'react';
 
+const serviceBudgetMap: Record<string, { label: string; value: string }[]> = {
+  web: [
+    { label: 'Under $200', value: 'under-200' },
+    { label: '$200 - $500', value: '200-500' },
+    { label: '$500 - $1,000', value: '500-1000' },
+    { label: '$1,000+', value: '1000-plus' },
+    { label: 'Let\'s Discuss', value: 'discuss' },
+  ],
+  uiux: [
+    { label: 'Under $100', value: 'under-100' },
+    { label: '$100 - $300', value: '100-300' },
+    { label: '$300 - $700', value: '300-700' },
+    { label: '$700+', value: '700-plus' },
+    { label: 'Let\'s Discuss', value: 'discuss' },
+  ],
+  branding: [
+    { label: 'Under $100', value: 'under-100' },
+    { label: '$100 - $300', value: '100-300' },
+    { label: '$300 - $700', value: '300-700' },
+    { label: '$700+', value: '700-plus' },
+    { label: 'Let\'s Discuss', value: 'discuss' },
+  ],
+  video: [
+    { label: 'Under $50', value: 'under-50' },
+    { label: '$50 - $150', value: '50-150' },
+    { label: '$150 - $400', value: '150-400' },
+    { label: '$400+', value: '400-plus' },
+    { label: 'Let\'s Discuss', value: 'discuss' },
+  ]
+};
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{type: 'success' | 'error', text: string} | null>(null);
@@ -13,7 +44,13 @@ export default function Contact() {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    
+    if (name === 'type') {
+      setFormData((prev) => ({ ...prev, type: value, budget: '' }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -126,13 +163,13 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2 md:col-span-2">
                   <label className="text-sm font-medium text-white/70">Budget</label>
-                  <select required name="budget" value={formData.budget} onChange={handleChange} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all appearance-none [&>option]:bg-neutral-900">
+                  <select disabled={!formData.type} required name="budget" value={formData.budget} onChange={handleChange} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all appearance-none [&>option]:bg-neutral-900 disabled:opacity-50 disabled:cursor-not-allowed">
                     <option value="">Select budget range</option>
-                    <option value="10-50">$10 - $50</option>
-                    <option value="50-100">$50 - $100</option>
-                    <option value="100-200">$100 - $200</option>
-                    <option value="200-300">$200 - $300</option>
-                    <option value="depends">Depends on work</option>
+                    {formData.type && serviceBudgetMap[formData.type]?.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>

@@ -8,7 +8,7 @@ const team = [
   {
     name: 'Ayush Yadav',
     role: 'Creative Designer',
-    image: '/ayush.png',
+    image: 'https://raw.githubusercontent.com/anonymouspookie9869/Pixelforge/main/public/ayush.png',
     bio: 'Ayush leads creative design and visual content production. He specializes in graphic design, social media creatives, thumbnails, branding assets, photo editing, and video editing. He combines creativity with modern design tools to help brands stand out online.',
     skills: ['Canva', 'Adobe Creative Tools', 'Thumbnail Design', 'Photo Editing', 'Video Editing', 'Content Design', 'Brand Graphics', 'Social Media Assets'],
     highlights: ['Content & Video Editing Leader', 'Event Creative Management', 'Visual Branding Specialist']
@@ -16,7 +16,7 @@ const team = [
   {
     name: 'Shivam',
     role: 'Full Stack Developer',
-    image: '/shivam.png',
+    image: 'https://raw.githubusercontent.com/anonymouspookie9869/Pixelforge/main/public/shivam.png',
     bio: 'Shivam is a Full Stack Developer specializing in modern web technologies and scalable digital products. He has experience building custom client websites and interactive web applications. He brings expertise in frontend development, Git workflows, deployment, and modern AI-assisted development tools.',
     skills: ['React.js', 'JavaScript', 'HTML/CSS', 'Python', 'Git', 'UI/UX', 'Google AI Studio', 'Lovable', 'Modern Web Dev'],
     highlights: ['Freelance Web Developer', 'Event Team Lead', 'Multiple successful client projects', 'Strong client communication']
@@ -49,12 +49,11 @@ export default function Team() {
               
               <div className="w-full md:w-1/3 shrink-0">
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-800">
-                  <Image 
+                  <img 
                     src={member.image} 
                     alt={member.name}
-                    fill
                     referrerPolicy="no-referrer"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                   />
                 </div>
                 <div className="flex gap-4 mt-6 justify-center">
